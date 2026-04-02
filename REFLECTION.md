@@ -9,7 +9,7 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Write your answer here. Discuss specific concepts like thread creation, thread states, how threads execute concurrently, what surprised you, etc.]
+I learned how multithreading allows multiple tasks to run concurrently, improving CPU utilization. In this assignment, I used threads to simulate processes where each process runs for a specific time quantum. I understood how start() initiates execution and join() forces the main thread to wait for completion, which was crucial for Round Robin scheduling. I also learned that threads share memory, so careful management of shared data structures like the ready queue is necessary. Overall, this assignment connected theoretical scheduling concepts to practical multithreading implementation.
 
 ---
 
@@ -17,24 +17,21 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Describe the specific challenge. Was it understanding the code? Implementing a feature? Using Git? Explain what made it difficult and how it relates to the course concepts.]
-
+The most challenging part was implementing priority scheduling combined with Round Robin correctly. Ensuring higher priority processes execute first required careful implementation of the PriorityQueue comparator, but I encountered a NullPointerException when the comparator was called with null values. Another challenge was tracking waiting time accurately across multiple quantum executions. The formatting error in the summary table (IllegalFormatConversionException) was also tricky because mixing colored strings with numeric format specifiers caused crashes. These challenges tested my understanding of both scheduling algorithms and Java implementation.
 ---
 
 ## Question 3: How did you overcome the challenges you faced?
 
 **Your Answer:**
 
-[Describe your problem-solving approach. Did you read documentation? Ask for help? Debug systematically? What resources did you use? What strategies worked?]
-
+I overcame challenges using systematic debugging and incremental testing. I added temporary print statements to track process states, priority values, and queue contents. I tested incrementally, starting with 2 processes then increasing to 16, which made bugs easier to isolate. For the NullPointerException, I added null checks in the comparator and moved processMap declaration before the queue. For the formatting error, I changed %d to %s after reviewing Java's String.format() documentation. This methodical approach helped me fix all issues and achieve correct scheduling behavior.
 ---
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
 **Your Answer:**
 
-[Give specific examples from real applications you use (web browsers, games, mobile apps, etc.). Explain why threads are useful in those scenarios. Connect to what you learned in this assignment.]
-
+Multithreading is essential in many real-world applications. E-commerce platforms like Amazon use threads to process multiple customer orders simultaneously, especially during sales events. Ride-sharing apps such as Uber use threads to track driver locations, match riders, and process payments all at the same time. Social media platforms like Instagram use threads to handle uploading photos, loading comments, refreshing feeds, and sending notifications concurrently. Banking systems use threads to process multiple ATM transactions and online transfers without interfering with each other. Artificial intelligence applications use threads to run multiple model training tasks in parallel, significantly reducing training time. This assignment helped me understand how modern software stays responsive and efficient even when doing many things at once.
 ---
 
 ## Additional Reflections (Optional)
