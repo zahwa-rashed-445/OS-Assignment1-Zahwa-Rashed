@@ -34,7 +34,6 @@ class Process implements Runnable {
     private long lastEnqueueTime;  // Tracks when process was added to queue (start of waiting)
     private long totalWaitTime;     // Accumulates total waiting time across all queue waits
     // Constructor to initialize the process with name, burst time, and time quantum
-    public Process(String name, int burstTime, int timeQuantum) {
      public Process(String name, int burstTime, int timeQuantum, int priority) {
         this.name = name;
         this.burstTime = burstTime;
